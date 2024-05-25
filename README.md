@@ -1,6 +1,6 @@
 # PConv_SDloss_SIRST-UAVB  
 
-### ___'step 1.  DATA Preparation'___   
+## ___'step 1.  DATA Preparation'___   
 
   *Download the datasets and put them to './data'.*
   
@@ -11,7 +11,7 @@
               [baidu](URL 'https://pan.baidu.com/s/1j3qjk_EvpkjsArGHXyV0qg?pwd=vfwu')  (Extraction code：'vfwu'))
 
 
-### ___'step2 2. Selection algorithm'___
+## ___'step 2. Selection algorithm'___
 
   *Download CNN-based IRSTD algorithms that need to be improved*  
 
