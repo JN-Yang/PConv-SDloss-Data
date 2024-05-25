@@ -2,7 +2,7 @@
   
 ## DATA Preparation   
 
-  Download the SIRST-UAVB dataset and the public dataset and place them in the './data' folder.
+  Download the datasets and put them to './data'.
   
   [IRSTD-1K][datasets](URL 'https://github.com/RuiZhang97/ISNet')  
   [IRSTD-1K][BOX_labels](dir ./data/IRSTD-1K-labels/labels)  
