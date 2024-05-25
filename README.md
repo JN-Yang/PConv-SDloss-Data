@@ -1,4 +1,4 @@
-# PConv_SDloss_SIRST-UAVB  
+# **Pinwheel-shaped Convolutional and Scale-based Dynamic Loss for Infrared Dim Small Target Detection**
 
 ## ___step 1.  DATA Preparation___   
 
@@ -7,9 +7,9 @@
   [IRSTD-1K](URL 'https://github.com/RuiZhang97/ISNet')  
   [IRSTD-1K][BOX_labels](dir ./data/IRSTD-1K-labels/labels)  
 
-  ![Github stars](https://img.shields.io/badge/License-MIT-blue)
-  [SIRST-UAVB][google](URL 'https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=drive_link')  
-              [baidu](URL 'https://pan.baidu.com/s/1j3qjk_EvpkjsArGHXyV0qg?pwd=vfwu')  (Extraction code：'vfwu'))
+  [SIRST-UAVB]  ![Github stars](https://img.shields.io/badge/License-MIT-blue)    
+  [google](URL 'https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=drive_link')  
+  [baidu](URL 'https://pan.baidu.com/s/1j3qjk_EvpkjsArGHXyV0qg?pwd=vfwu')  (Extraction code：'vfwu'))
 
 
 ## ___step 2. Selection algorithm___
