@@ -1,4 +1,4 @@
-# **Pinwheel-shaped Convolutional and Scale-based Dynamic Loss for Infrared Dim Small Target Detection**
+# **Asymmetric Padding Convolutional and Scale-based Dynamic Loss for Infrared Dim Small Target Detection**
 
 ## ___step 1.  DATA Preparation___   
 
