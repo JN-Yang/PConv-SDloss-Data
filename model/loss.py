@@ -62,7 +62,7 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=Fa
         GIoU (bool, optional): If True, calculate Generalized IoU. Defaults to False.
         DIoU (bool, optional): If True, calculate Distance IoU. Defaults to False.
         CIoU (bool, optional): If True, calculate Complete IoU. Defaults to False.
-        SDIoU (bool, optional): If True, calculate Complete IoU. Defaults to False.
+        SDIoU (bool, optional): If True, calculate Scale-based Dynamic IoU. Defaults to False.
         eps (float, optional): A small value to avoid division by zero. Defaults to 1e-7.
 
     Returns:
@@ -157,7 +157,6 @@ class SLSIoULoss(nn.Module):
         h = pred.shape[2]
         w = pred.shape[3]
         smooth = 0.0
-        ic = 512*512/(w*h)
 
         intersection = pred * target
 
@@ -176,7 +175,7 @@ class SLSIoULoss(nn.Module):
             siou_loss = alpha * loss
             if dynamic:
                 lloss = LLoss(pred, target)
-                beta = (target_sum * d * ic) / 81
+                beta = (target_sum * d) / 81
                 beta = torch.where(beta > d, torch.tensor(d), beta)
                 beta = beta.mean()
                 if with_distance:
