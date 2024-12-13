@@ -50,7 +50,7 @@ class BboxLoss(nn.Module):
         ).mean(-1, keepdim=True)
 
 
-def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=False, eps=1e-7, d=0.5):
+def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=True, eps=1e-7, d=0.5):
     """
     Calculate Intersection over Union (IoU) of box1(1, 4) to box2(n, 4).
 
@@ -148,7 +148,9 @@ def Dice(pred, target, warm_epoch=1, epoch=1, layer=0):
     return loss
 
 
-class SLSIoULoss(nn.Module):   
+class SLSIoULoss(nn.Module):   # https://github.com/Lliu666/MSHNet
+    ''' SLSIoULoss and our SDM Loss '''
+    
     def __init__(self):
         super(SLSIoULoss, self).__init__()
 
@@ -157,7 +159,8 @@ class SLSIoULoss(nn.Module):
         h = pred.shape[2]
         w = pred.shape[3]
         smooth = 0.0
-
+        
+        R_oc = 512 * 512 / ( w * h )
         intersection = pred * target
 
         intersection_sum = torch.sum(intersection, dim=(1, 2, 3))
@@ -175,7 +178,7 @@ class SLSIoULoss(nn.Module):
             siou_loss = alpha * loss
             if dynamic:
                 lloss = LLoss(pred, target)
-                beta = (target_sum * d) / 81
+                beta = (target_sum * d * R_oc) / 81
                 beta = torch.where(beta > d, torch.tensor(d), beta)
                 beta = beta.mean()
                 if with_distance:
