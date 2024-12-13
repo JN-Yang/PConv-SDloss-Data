@@ -1,13 +1,13 @@
 # **Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection**
 --------
 
-## In this paper, we proposed a plug-and-play PConv module, leveraging the Gaussian distribution characteristics of IRST to achieve an efficient, larger receptive field with minimal parameters. We also introduced a simple yet effective SD loss function to address IoU fluctuation issues with labels. Furthermore, we introduced the SIRST-UAVB dataset, a large-scale and challenging benchmark with detailed annotations. Our contributions can be summarized as follows: \<br> 
+### In this paper, we proposed a plug-and-play PConv module, leveraging the Gaussian distribution characteristics of IRST to achieve an efficient, larger receptive field with minimal parameters. We also introduced a simple yet effective SD loss function to address IoU fluctuation issues with labels. Furthermore, we introduced the SIRST-UAVB dataset, a large-scale and challenging benchmark with detailed annotations. Our contributions can be summarized as follows:
 
-  (1) Based on the Gaussian spatial distribution of IRST, we propose a novel plug-and-play convolutional module, PConv, which enhances CNNs' ability to analyze bottom-layer features of IRST. \<br> 
+  (1) Based on the Gaussian spatial distribution of IRST, we propose a novel plug-and-play convolutional module, PConv, which enhances CNNs' ability to analyze bottom-layer features of IRST.
   
-  (2) We introduce SD loss, which dynamically adjusts the impact coefficients of Scale loss and Location loss, improving the neural network’s regression capability and detection performance across targets of varying scales. \<br> 
+  (2) We introduce SD loss, which dynamically adjusts the impact coefficients of Scale loss and Location loss, improving the neural network’s regression capability and detection performance across targets of varying scales.
   
-  (3) We construct SIRST-UAVB, the largest publicly dataset for real IRSTDS, encompassing comprehensive spatial domain challenges. \<br> 
+  (3) We construct SIRST-UAVB, the largest publicly dataset for real IRSTDS, encompassing comprehensive spatial domain challenges.
   
   (4) We apply PConv and SD Loss to both BBox and mask label formats in IRSTDS methods, validating their effectiveness and generalization across public datasets and our own. Experimental results demonstrate significant and consistent performance enhancements.
 
