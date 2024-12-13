@@ -11,13 +11,13 @@
   
   (4) We apply PConv and SD Loss to both BBox and mask label formats in IRSTDS methods, validating their effectiveness and generalization across public datasets and our own. Experimental results demonstrate significant and consistent performance enhancements.
 
-
+--------
 ## ___step 1.  DATA Preparation___   
 
   *Download the datasets and put them to './data'.*
   
   [IRSTD-1K](URL 'https://github.com/RuiZhang97/ISNet')  
-  [IRSTD-1K][BOX_labels](dir ./data/IRSTD-1K-labels/labels)  
+  [IRSTD-1K][BBOX_labels](dir ./data/IRSTD-1K-labels/labels)  
 
   [SIRST-UAVB]  ![Github stars](https://img.shields.io/badge/License-MIT-blue)    
   [google](URL 'https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=drive_link')  
