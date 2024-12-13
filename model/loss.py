@@ -50,7 +50,7 @@ class BboxLoss(nn.Module):
         ).mean(-1, keepdim=True)
 
 
-def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=True, eps=1e-7, d=0.5):
+def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=True, eps=1e-7, delta=0.5):
     """
     Calculate Intersection over Union (IoU) of box1(1, 4) to box2(n, 4).
 
@@ -91,6 +91,8 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=Tr
 
     # IoU
     iou = inter / union
+
+    # R_oc = 1     # The YOLO bounding box is normalized, so R_oc is equal to 1.
     if CIoU or DIoU or GIoU or SDIoU:
         cw = b1_x2.maximum(b2_x2) - b1_x1.minimum(b2_x1)  # convex (smallest enclosing box) width
         ch = b1_y2.maximum(b2_y2) - b1_y1.minimum(b2_y1)  # convex height
@@ -102,8 +104,8 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=Tr
                 with torch.no_grad():
                     alpha = v / (v - iou + (1 + eps))
                 if SDIoU:
-                    beta = (w2 * h2 * d) / 81
-                    beta = torch.where(beta > d, torch.tensor(d), beta)
+                    beta = (w2 * h2 * delta) / 81
+                    beta = torch.where(beta > delta, torch.tensor(delta), beta)
                     return d-beta + (1-d+beta)*(iou-v*alpha) - (1+d-beta)*(rho2/c2)  # SDIoU
                 return iou - (rho2 / c2 + v * alpha)  # CIoU
             return iou - rho2 / c2  # DIoU
@@ -154,7 +156,7 @@ class SLSIoULoss(nn.Module):   # https://github.com/Lliu666/MSHNet
     def __init__(self):
         super(SLSIoULoss, self).__init__()
 
-    def forward(self, pred_log, target, warm_epoch, epoch, with_distance=True, dynamic=True, d=0.5):
+    def forward(self, pred_log, target, warm_epoch, epoch, with_distance=True, dynamic=True, delta=0.5):
         pred = torch.sigmoid(pred_log)
         h = pred.shape[2]
         w = pred.shape[3]
@@ -178,8 +180,8 @@ class SLSIoULoss(nn.Module):   # https://github.com/Lliu666/MSHNet
             siou_loss = alpha * loss
             if dynamic:
                 lloss = LLoss(pred, target)
-                beta = (target_sum * d * R_oc) / 81
-                beta = torch.where(beta > d, torch.tensor(d), beta)
+                beta = (target_sum * delta * R_oc) / 81
+                beta = torch.where(beta > delta, torch.tensor(delta), beta)
                 beta = beta.mean()
                 if with_distance:
                     loss = (1 + beta) * (1 - siou_loss.mean()) + (1 - beta) * lloss     #  SDM loss
