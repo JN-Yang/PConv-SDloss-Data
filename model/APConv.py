@@ -33,7 +33,9 @@ class Conv(nn.Module):
         return self.act(self.conv(x))
 
 
-class PConv(nn.Module):  # PConv
+class PConv(nn.Module):  
+    ''' Pinwheel-shaped Convolution using the Asymmetric Padding method. '''
+    
     def __init__(self, c1, c2, k, s):
         super().__init__()
 
@@ -49,7 +51,6 @@ class PConv(nn.Module):  # PConv
         yw1 = self.cw(self.pad[1](x))
         yh0 = self.ch(self.pad[2](x))
         yh1 = self.ch(self.pad[3](x))
-        # return torch.cat([yw, yh], dim=1)
         return self.cat(torch.cat([yw0, yw1, yh0, yh1], dim=1))
 
 
