@@ -32,6 +32,9 @@
 
   *PConv and SD loss are used to replace the corresponding parts of the original algorithm.*
 
+
+##
+* The SD loss code is highly borrowed from [CIoU loss](https://github.com/Zzh-tju/CIoU) and [SLS loss](URL 'https://github.com/Lliu666/MSHNet'). Thanks to Zhaohui Zheng and Qiankun Liu.
   
 
 
