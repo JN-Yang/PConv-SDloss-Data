@@ -20,8 +20,8 @@
   [IRSTD-1K][BBOX_labels](dir ./data/IRSTD-1K-labels/labels)  
 
   [SIRST-UAVB]  ![Github stars](https://img.shields.io/badge/License-MIT-blue)    
-  [google](URL 'https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=drive_link')  
-  [baidu](URL 'https://pan.baidu.com/s/1j3qjk_EvpkjsArGHXyV0qg?pwd=vfwu')  (Extraction code：'vfwu'))
+  [google](URL '[https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=drive_link](https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=sharing)')  
+  [baidu](URL 'https://pan.baidu.com/s/1FIg6BU8jlZogEQYWx_-ubQ?pwd=0558')  (Extraction code：'0558'))
 
 
 ## ___step 2. Selection algorithm___
