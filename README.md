@@ -16,19 +16,19 @@
 
   *Download the datasets and put them to './data'.*
   
-  [IRSTD-1K](URL 'https://github.com/RuiZhang97/ISNet')  
+  [IRSTD-1K](https://github.com/RuiZhang97/ISNet)  
   [IRSTD-1K][BBOX_labels](dir ./data/IRSTD-1K-labels/labels)  
 
   [SIRST-UAVB]  ![Github stars](https://img.shields.io/badge/License-MIT-blue)    
-  [google](URL '[https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=drive_link](https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=sharing)')  
-  [baidu](URL 'https://pan.baidu.com/s/1FIg6BU8jlZogEQYWx_-ubQ?pwd=0558')  (Extraction code：'0558'))
+  [google](https://drive.google.com/file/d/1hANdynk5C3fUQ1z2CqLRhAqUAfEsaWq8/view?usp=drive_link)  
+  [baidu](https://pan.baidu.com/s/1FIg6BU8jlZogEQYWx_-ubQ?pwd=0558)  (Extraction code：'0558'))
 
 
 ## ___step 2. Selection algorithm___
 
   *Download CNN-based IRSTD algorithms that need to be improved*  
 
-  Such as [yolov8n-p2](URL 'https://github.com/ultralytics/ultralytics.git') or [MSHNet](URL 'https://github.com/Lliu666/MSHNet').
+  Such as [yolov8n-p2](https://github.com/ultralytics/ultralytics.git) or [MSHNet](https://github.com/Lliu666/MSHNet).
 
   *PConv and SD loss are used to replace the corresponding parts of the original algorithm.*
 
