@@ -35,6 +35,18 @@
 
 ##
 * The SD loss code is highly borrowed from [CIoU loss](https://github.com/Zzh-tju/CIoU) and [SLS loss](URL 'https://github.com/Lliu666/MSHNet'). Thanks to Zhaohui Zheng and Qiankun Liu.
+
+## Citation
+Please kindly cite the papers if the code and dataset are useful and helpful for your research.
+
+    @misc{yang2024,
+        title={Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection},
+        author={Jiangnan Yang and Shuangli Liu and Jingjun Wu and Xinyu Su and Nan Hai and Xueli Huang},
+        year={2024},
+        eprint={2412.16986},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
+    }
   
 
 
