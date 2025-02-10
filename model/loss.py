@@ -106,7 +106,7 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=Tr
                 if SDIoU:
                     beta = (w2 * h2 * delta) / 81
                     beta = torch.where(beta > delta, torch.tensor(delta), beta)
-                    return d-beta + (1-d+beta)*(iou-v*alpha) - (1+d-beta)*(rho2/c2)  # SDIoU
+                    return delta-beta + (1-delta+beta)*(iou-v*alpha) - (1+delta-beta)*(rho2/c2)  # SDIoU
                 return iou - (rho2 / c2 + v * alpha)  # CIoU
             return iou - rho2 / c2  # DIoU
         c_area = cw * ch + eps  # convex area
