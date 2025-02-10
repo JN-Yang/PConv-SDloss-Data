@@ -1,6 +1,11 @@
 # **Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection**
 --------
 
+## Correct instructions
+
+  Thanks for ZhipengHe's reminder, we found that 'd' in lines 22 and 109 of model/loss.py did not update the name 'delta' synchronously when submitting the code, which has been corrected. At the same time, instructions and update reminders are provided for this error correction.
+
+--------
 ### In this paper, we proposed a plug-and-play PConv module, leveraging the Gaussian distribution characteristics of IRST to achieve an efficient, larger receptive field with minimal parameters. We also introduced a simple yet effective SD loss function to address IoU fluctuation issues with labels. Furthermore, we introduced the SIRST-UAVB dataset, a large-scale and challenging benchmark with detailed annotations. Our contributions can be summarized as follows:
 
   (1) Based on the Gaussian spatial distribution of IRST, we propose a novel plug-and-play convolutional module, PConv, which enhances CNNs' ability to analyze bottom-layer features of IRST.
