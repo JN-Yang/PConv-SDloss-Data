@@ -105,7 +105,7 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SDIoU=Tr
                     alpha = v / (v - iou + (1 + eps))
                 if SDIoU:
                     beta = (w2 * h2 * delta) / 81
-                    beta = torch.where(beta > delta, torch.tensor(delta), beta)
+                    beta = torch.where(beta > delta, torch.tensor(delta, device=beta.device), beta)
                     return delta-beta + (1-delta+beta)*(iou-v*alpha) - (1+delta-beta)*(rho2/c2)  # SDIoU
                 return iou - (rho2 / c2 + v * alpha)  # CIoU
             return iou - rho2 / c2  # DIoU
