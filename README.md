@@ -44,13 +44,14 @@
 ## Citation
 Please kindly cite the papers if the code and dataset are useful and helpful for your research.
 
-    @misc{yang2024,
-        title={Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection},
-        author={Jiangnan Yang and Shuangli Liu and Jingjun Wu and Xinyu Su and Nan Hai and Xueli Huang},
-        year={2024},
-        eprint={2412.16986},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV}
+    @inproceedings{yang2025pinwheel,
+      title={Pinwheel-shaped convolution and scale-based dynamic loss for infrared small target detection},
+      author={Yang, Jiangnan and Liu, Shuangli and Wu, Jingjun and Su, Xinyu and Hai, Nan and Huang, Xueli},
+      booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+      volume={39},
+      number={9},
+      pages={9202--9210},
+      year={2025}
     }
   
 
